@@ -5,4 +5,4 @@ services:
     dockerfilePath: ./Dockerfile
     envVars:
       - key: TAILSCALE_AUTHKEY
-        sync: true
+        value: Enter Tailscale Auth key here
