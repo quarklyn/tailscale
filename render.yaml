@@ -4,5 +4,5 @@ services:
     env: docker
     dockerfilePath: ./Dockerfile
     envVars:
-      - key: KEY
-        askAtDeploy: true
+      - key: TAILSCALE_AUTHKEY
+        sync: false
