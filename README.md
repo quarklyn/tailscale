@@ -1,30 +1,28 @@
-<h1 align="center">Heroku VPN</h1>
-<h2 align="center">Easily spin up an ephemeral VPN on heroku using tailscale under the hood</h2><br>
+<h1 align="center">Renscale</h1>
+<h2 align="center">Easily spin up an ephemeral VPN on Render using Tailscale under the hood</h2><br>
 
 ### Disclaimer:
-<code>NEITHER me NOR this project shall be in any way held responsible if YOUR ACCOUNT gets banned. It is YOUR sole
-reponsibility to use this project in whatever way you may want. However I totally recommend AGAINST ABUSING these 
-services with excessive usage.</code><br>
+<code>Neither me nor this project shall be in any way held responsible if your account gets banned. It is your sole responsibility to use this project in whatever way you may want. To ensure fair and sustainable access for all, please refrain from excessive usage of these services.</code><br>
 ### Prerequisites:
-- Free [Heroku](https://www.heroku.com/home) account
-- Free [Tailscale](https://tailscale.com/) account<br>
+- Free [Render](https://render.com/) account.
+- Free [Tailscale](https://tailscale.com/) account.<br>
 ### Pre Deployment Guide:
-1. Signup on [Tailscale](https://tailscale.com/).
+1. Signup on [Tailscale](https://login.tailscale.com/start).
 
     ![1](/assets/1.png)
     ![2](/assets/2.png)
-2. Connect atleast one device following the tailscale **Introduction guide**.
+2. Connect at least one device following the Tailscale introduction guide.
 
     ![3](/assets/3.png)
-3. Go to the **Access Controls** tab and save the following JSON into **Edit file** section, replacing <code>x0rzavi@github</code>
-with an appropriate value from **Users** tab.
+3. Go to the **Access Controls** tab and save the following JSON into **Edit file** section, replacing <code>quarklyn@github</code>
+with an appropriate value from the **Users** tab.
     ```json
     {
         "acls": [
           { "action": "accept", "src": ["*"], "dst": ["*:*"] },
         ],
         "tagOwners": {
-          "tag:vpn": ["x0rzavi@github"],
+          "tag:vpn": ["quarklyn@github"],
         },
         "autoApprovers": {
           "exitNode": ["tag:vpn"],
@@ -34,7 +32,7 @@ with an appropriate value from **Users** tab.
 
     ![4](/assets/4.png)
     ![7](/assets/7.png)
-4. Go to **Keys** section in **Settings** tab and generate an **auth key**. Paste this key into heroku when asked for.
+4. Go to the **Keys** section in the **Settings** tab and generate an **auth key**. Paste this key into heroku when asked for.
 Also save it for future use.
 
     ![5](/assets/5.png)
