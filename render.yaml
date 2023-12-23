@@ -1,8 +1,10 @@
 services:
   - type: web
     name: Renscale
-    env: docker
-    dockerfilePath: ./Dockerfile
+    runtime: docker
+    region: singapore
+    plan: free
+    healthCheckPath: /
     envVars:
       - key: TAILSCALE_AUTHKEY
-        value: Enter Tailscale Auth key here
+        sync: false
